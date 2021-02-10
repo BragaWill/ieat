@@ -1,0 +1,56 @@
+#version: "3.6"
+
+#services:
+#  ieat:
+#    image: ieat
+#    build:
+#      context: .
+#    container_name: ieat
+#    hostname: ieat
+#    environment:
+#      - RAILS_ENV=development
+#      - DATABASE_HOST=postgres
+#      - DATABASE_USERNAME=postgres
+#      - DATABASE_PASSWORD=postgres
+#    volumes:
+#      - .:/ieat:delegated
+#      - /ieat/node_modules
+#      - gems:/home/ieat:delegated
+#    ports:
+#      - "3000:3000"
+#    depends_on:
+#      - postgres
+#      - redis
+#      - gems
+#    networks:
+#      - default
+
+#  gems:
+#    image: busybox:latest
+#    volumes:
+#      - /gems
+
+#  postgres:
+#    image: postgres:9.6.6-alpine
+#    container_name: ieat-db
+
+#    volumes:
+#      - pg-data:/var/lib/postgresql:delegated
+#    ports:
+#      - "5432:5432"
+
+#  redis:
+#    image: redis:6-alpine
+#    container_name: redis
+#    ports:
+#      - "7777:7777"
+
+#networks:
+#  default:
+#    drive: bridge
+#    name: ieat
+
+#volumes:
+#  gems:
+#    pg-data:
+#      node_modules:
